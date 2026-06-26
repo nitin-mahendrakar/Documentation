@@ -1,0 +1,283 @@
+
+** Inheritance Properties.
+-- [ color font-family font-varint font-size font-style font-weight ]
+-- [ letter-spacing line-height text-align text-indent text-transform ]
+-- [ visibility white-space word-spacing writing-mode ]
+-- [ border-collpase border-spacing caption-side empty-cells table-layout ]
+-- [ list-style - * ]
+-- [ cursor ]
+
+
+1. CSS Core Fundamentals
+  Syntax • Cascade • Specificity • Inheritance 
+  • initial vs inherit vs unset vs revert 
+  • !important • CSS Parsing 
+  • User Agent Styles
+
+3. Selectors
+  Universal Selector 
+  Attribute Selector 
+  GroupSelector
+  Descendent Selector div p {} & ChildSelector div > p 
+  Compound Selector element.class 
+  Adjecent Selector  + 
+  Sibling Selector  ~
+
+2. CSS Values & Units (Complete)
+  Absolute: px
+  Relative: %, em, rem
+  Viewport: vw, vh, vmin, vmax, 
+  svw landscape horizontal check
+  svh landscape vertical check
+  lvw horizontal
+  lvh, vertical
+  dvw, auto
+  dvh  auto
+  Grid/Layout: fr
+
+7. Display & Visibility
+  display,visibility,opacity
+
+5 Box Properties.
+  Width,Height,Padding,Borders,Margin,Box-Sizing
+
+8. Positioning (FULL)
+  position, top/right/bottom/left, 
+  inset, z-index
+
+11. Overflow & Scroll
+  overflow (-x/-y/-inline/-block), 
+  , scroll-behavior,
+  overscroll-behavior = smooth, 
+  scrollbar-gutter=stable,stable-both-edges, 
+  scroll-snap-type=
+      x-mandotary=50% scroll ho chuka hai to o dusra box le leta hai.
+      ,x proximity=20% scroll hona baki rehta hai tab scroll hota hai.
+
+14. Backgrounds (FULL)
+  background (shorthand),
+   background-image, 
+  -size, -position, -repeat, -attachment, -clip, -origin, -blend-mode
+
+15. Borders & Outline
+  border (shorthand), -width, -style, -color, -radius, -image, outline, outline-offset
+
+12. Typography (COMPLETE)
+  color-scheme
+  font (shorthand), font-family, font-size (-adjust),
+  font-weight, font-style, font-stretch, font-variant,
+  line-height, letter-spacing,
+  word-spacing,white-space,word-wrap,
+  text-align,text-indent,text-transform, text-decoration
+  text-underline-offset,text-decoration-skip-ink=none 
+  font-kerning=thoda letters space deta hai (none)
+  font-variation-settings : "wght" 900 (another option to font-weight change)
+
+16. Effects & Filters
+  box-shadow, text-shadow, filter, backdrop-filter, mix-blend-mode, isolation
+
+4. quesdo Classes
+    Used mostly with links and interactive elements.
+      :link — unvisited links
+      :visited — visited links
+      :hover — mouse is over the element
+      :active — element is being clicked
+      :focus — element has keyboard/mouse focus (select/tabindex/text)
+      :target — element targeted by a URL fragment (#id)
+
+    📝 Form & Input States
+    Mainly for form controls and validation.
+      :checked — checked inputs (checkbox, radio)
+      :disabled — disabled elements
+      :enabled — enabled elements
+      :required — required inputs
+      :optional — optional inputs
+      :valid — input passes validation
+      :invalid — input fails validation
+      :focus-visible=input/select
+      :focus-within = label ko target karta jab input ko focus karte hai
+      :user-valid
+      :user-invalid
+
+    🌳 Structural (Tree-Based) Selectors
+      Based on the element’s position in the DOM.
+      :root — the root element (<html>)
+      :empty — elements with no children
+      :first-child
+      :last-child
+      :only-child 
+      :nth-child(n)
+      :nth-last-child(n)
+      
+
+    🧩 Type-Based Structural Selectors
+    Like structural selectors, but scoped to element type.
+      :first-of-type
+      :last-of-type
+      :nth-of-type(n)
+      :nth-last-of-type(n)
+      :only-of-type
+
+    🧠 Logical / Functional Pseudo-Classes
+
+    Used for advanced selector logic and grouping.
+      :not(selector) — excludes elements
+      :has 
+      :is(selector) — matches any selector in the list
+      :where(selector) — same as :is() but with zero specificity
+
+      :defined = very useful for uploading 
+      :popover-open = use for mobile navigation 
+
+4. Pseudo Elements (FULL)
+  ::before, ::after, ::first-letter,
+  ::first-line, ::selection,
+  ::marker, ::placeholder, ::file-selector-button,
+  ::backdrop, ::cue
+
+17. Transform, Transition, Animation
+  Transform: transform, translate/scale/rotate/skew, transform-origin, perspective
+  Transition: transition (shorthand), -property, -duration, -timing-function, -delay
+  Animation: animation (shorthand), @keyframes, -name, -duration,delay,timing-function,
+             -iteration-count, -direction, -fill-mode, -play-state
+            animation-composition
+
+            animation-timeline
+            scroll-timeline
+            view-timeline
+            timeline-scope
+            offset-path
+            offset-distance
+            offset-rotate
+            motion-path
+
+18. Forms & UI
+  appearance, caret-color=input | bar, 
+   cursor, pointer-events, 
+  user-select, touch-action
+  popover
+  ::view-transition
+  ::view-transition-old
+  ::view-transition-new
+  backface-visibility
+  transform-style
+  scroll-padding
+  scroll-margin
+
+  
+9. Flexbox (ALL)
+  display: flex, flex-direction, flex-wrap,
+  flex-flow, justify-content, align-items, 
+  align-content, gap, row-gap, column-gap, 
+  flex-grow, flex-shrink, flex-basis, 
+  flex, order, align-self
+
+
+✅ 10. GRID LAYOUT (COMPLETE + CORRECTED)
+  Container Properties
+  display: grid | inline-grid
+  grid-template-columns, grid-template-rows, grid-template-areas, grid-template (shorthand)
+  grid-auto-columns, grid-auto-rows, grid-auto-flow
+  grid (master shorthand: template + auto tracks + flow)
+  gap, row-gap, column-gap
+  justify-items, align-items, place-items (shorthand)
+  justify-content, align-content, place-content (shorthand)
+  Item Properties
+  grid-column-start, grid-column-end, grid-column (shorthand)
+  grid-row-start, grid-row-end, grid-row (shorthand)
+  grid-area (shorthand for row/column start/end OR area name assignment)
+  justify-self, align-self, place-self (shorthand)
+  Advanced
+  subgrid (value for grid-template-columns/rows in nested grids)
+  grid-template string syntax (ASCII art areas)
+  Implicit vs. explicit grid tracking
+  auto-fit
+  auto-fill
+  minmax()
+  fit-content()
+  repeat()
+
+
+🧩 5. Advanced Layout & Containment
+  aspect-ratio
+  content-visibility = andar sirf content ko hide karta hai
+  object-fit
+  object-position
+  scrollbar-width
+  scrollbar-color
+
+🖼 4. Advanced Background & Masking
+  
+  mask-image=only black-color ko image ke saath fill karta hai
+  mask-size
+  mask-repeat
+  mask-position
+  mask-origin,mask-clip
+  clip-path = shapes deta container ko 
+  shape-outside
+  shape-margin
+
+19. CSS Variables
+  Custom Properties (--var), var(), 
+  fallbacks, scoping, theme switching
+  env(safe-area-inset-top)
+  env(safe-area-inset-bottom)
+  viewport-fit=cover
+
+📌 15. Small But Important Properties Often Missed
+  caret-shape
+  field-sizing
+  text-size-adjust
+  overscroll-behavior-inline
+  overscroll-behavior-block
+  writing-mode
+  text-orientation
+  direction
+
+🚀 14. Extremely Modern / 2025+ Features
+  @starting-style
+  transition-behavior
+  :state() (experimental)
+  style() queries (future container queries extension)
+
+🧠 13. Accessibility Related CSS
+    forced-color-adjust
+    prefers-contrast
+    prefers-reduced-transparency
+    accent-color (you included 👍)
+
+
+20. Media & Container Queries
+  @media, @container, Container Units (cqw, cqh, cqi, cqb),
+  prefers-color-scheme, prefers-reduced-motion
+
+21. Modern CSS Architecture
+
+  @layer @container @media @supports 
+
+  Cascade Layers (@layer), CSS Nesting (&),@supports 
+  View Transitions API, Anchor Positioning (position: anchor), 
+  Scoped Styles (@scope), Utility CSS, Design Tokens
+  @supports selector()
+  @supports font-tech()
+  @supports font-format()
+
+22. Performance & Best Practices
+  will-change, avoid forced reflow/layout thrashing, 
+  GPU-accelerated transforms, minimize CLS (Cumulative Layout Shift), efficient animations, containment (contain)
+  🏎 11. Performance Modern Additions
+  contain: layout paint size style
+  image-rendering
+  font-display
+  loading="lazy" (HTML but performance critical)
+
+23. 🔢 Math & Calculation
+    Used for dynamic sizing and calculations.
+    calc()
+    min()
+    max()
+    clamp()
+    env
+
+
+

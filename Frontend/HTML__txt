@@ -1,0 +1,239 @@
+<!-- 1️⃣ Page Structure / Layout (Website Skeleton)
+Element	Use / Location
+<html>	Root element, poora page ka container
+<head>	Metadata, title, CSS, JS links
+<body>	Page ka visible content
+<main>	Page ka main content area
+<header>	Page / section ka header
+<footer>	Page / section ka footer
+<section>	Thematic section, page ke content ko divide karne ke liye
+<article>	Independent content, blog post, news item
+<nav>	Navigation menus / links
+<aside>	Sidebar, related / tangential content
+<div>	Generic container for layout / styling
+
+2️⃣ Metadata / Browser & SEO
+Element	Use / Location
+<title>	Page title, browser tab me dikhai deta hai
+<meta>	SEO, charset, viewport, description
+<link>	CSS / external resources link karna
+<base>	Base URL define karna
+<style>	Internal CSS styles define karna
+
+3 Headings
+Element	Use / Location
+<h1>–<h6>	Section / article headings, content hierarchy
+
+4️⃣ Text / Content
+Element	Use / Location
+<p>	Paragraph / normal text
+<span>	Inline text styling / grouping
+<br>	Line break
+<hr>	Horizontal separator / thematic break
+<strong>	Important text (bold semantically)
+<em>	Emphasized text (italic semantically)
+<b>	Bold text (visual only)
+<i>	Italic text (visual only)
+<u>	Underline text
+<small>	Smaller text
+<mark>	Highlighted text
+<sub>	Subscript
+<sup>	Superscript
+<abbr>	Abbreviation / acronym
+<cite>	Citation
+<code>	Code snippet
+<kbd>	Keyboard input
+<samp>	Sample output
+<var>	Variable / math symbol
+<q>	Short inline quote
+<blockquote>	Block quote / long quote
+<address>	Author / contact info
+
+5️⃣ Links & Navigation
+Element	Use / Location
+<a>	Hyperlink, page navigation, external/internal link
+<menu>	Menu / commands
+<ul>	Unordered list (bullets)
+<ol>	Ordered list (numbers)
+<li>	List item, inside <ul> / <ol>
+
+6️⃣ Lists
+Element	Use / Location
+<dl>	Definition list
+<dt>	Term in definition list
+<dd>	Description in definition list
+
+7️⃣ Images / Media / Embedded Content
+Element	Use / Location
+<img>	Image display
+<picture>	Responsive / multiple image sources
+<source>	Image / video / audio source
+<audio>	Audio player / sound
+<video>	Video player / movie
+<track>	Subtitles / captions for video
+<iframe>	Embed webpage / PDF / external content
+<embed>	Embed PDF, plugin content
+<object>	Embed PDF, fallback content
+<canvas>	Drawing / graphics using JS
+<svg>	Vector graphics / icons
+<math>	Mathematical notation / formula
+
+PDF / Document embedding:
+
+<iframe> → Embed PDF / webpage
+<embed> → Quick PDF embedding
+<object> → PDF with fallback / accessible content
+
+8️⃣ Forms & User Input
+Element	Use / Location
+<form>	Form container
+<input>	Input fields
+<textarea>	Multi-line text input
+<button>	Button (submit / reset / normal)
+<select>	Dropdown menu
+<option>	Dropdown option inside <select>
+<optgroup>	Group options in dropdown
+<label>	Label for input fields
+<fieldset>	Group related form controls
+<legend>	Title for <fieldset>
+<datalist>	Suggestion list for inputs
+<output>	Output of calculation / script
+<progress>	Progress bar
+<meter>	Measurement / gauge
+
+9️⃣ Tables
+Element	Use / Location
+<table>	Table container
+<caption>	Table title / description
+<thead>	Table header section
+<tbody>	Table body section
+<tfoot>	Table footer section
+<tr>	Table row
+<th>	Table header cell
+<td>	Table data cell
+<col>	Column formatting / style
+<colgroup>	Group columns for styling
+
+🔟 Interactive / Special Elements
+Element	Use / Location
+<details>	Collapsible content / toggle
+<summary>	Title / summary of <details>
+<dialog>	Modal / popup wind
+ow
+1️⃣1️⃣ Scripting / Dynamic Content
+Element	Use / Location
+<script>	JavaScript code
+<noscript>	Fallback if JS is disabled
+<template>	HTML template for JS
+<slot>	Web components content placeholder
+
+1️⃣2️⃣ Ruby / Asian Languages
+Element	Use / Location
+<ruby>	Annotation / pronunciation
+<rt>	Ruby text (pronunciation)
+<rp>	Fallback for ruby in unsupported browsers
+
+1️⃣3️⃣ Editing / Changes
+Element	Use / Location
+<ins>	Inserted content (added text)
+<del>	Deleted content (removed text)
+🔥 Sectioning Elements / Special Highlight
+Element	Use / Location
+<section>	Thematic section inside a page
+<article>	Independent content / blog / news
+<nav>	Navigation menu
+<aside>
+
+
+1. Properties that INHERIT by default
+
+Text & Font:
+color, font-family, font-size, font-style, font-variant, font-weight,
+letter-spacing, line-height, text-align,
+text-indent, text-transform, white-space, word-spacing
+
+Visibility & Cursor:
+visibility, cursor
+
+Lists:
+list-style, list-style-type, list-style-position, list-style-image
+
+Quotes & Direction:
+quotes, direction
+
+Table & Page Control:
+caption-side, border-collapse, border-spacing, empty-cells
+
+Other:
+orphans, widows
+
+--------------------------------------------------------------------------
+<meta name="description" content="Page description here">
+<title>Your Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://example.com/page">
+
+<meta name="robots" content="index, follow">
+    2️⃣ Robots Meta Tag क्या कर सकता है?
+    index	पेज को सर्च रिजल्ट में दिखाने की अनुमति
+    noindex	पेज को सर्च रिजल्ट में न दिखाएँ
+    follow	पेज के लिंक को फॉलो करने की अनुमति
+    nofollow	पेज के लिंक को फॉलो न करें
+    noarchive	Google को पेज का cached version न बनाने दें
+    nosnippet	Google को पेज का snippet/description न दिखाने दें
+    noimageindex	पेज की इमेजेस को इंडेक्स न करें search results me nahi dhikhegi
+    notranslate	Google Translate में पेज को ट्रांसलेट न करें
+    noodp	Open Directory Project (ODP) से title/description न लें
+
+<meta name="googlebot" content="index, follow">
+    index = पेज search results में आए
+    follow = पेज के links crawl और rank में count हों
+    index, follow = SEO friendly default
+
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="">
+
+<link rel="alternate" hreflang="en" href="https://example.com/en">
+<link rel="alternate" hreflang="fr" href="https://example.com/fr">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+--------------------------------------------------------------------------
+🖼️ Images
+
+JPG / JPEG
+
+PNG
+
+GIF
+
+🎵 Audio
+
+MP3
+
+WAV
+
+🎬 Video
+
+MP4
+⚠ Must be H.264 video + AAC audio
+
+📄 Documents
+
+PDF
+
+TXT
+
+🗜️ Archive
+
+ZIP
+
+----------------------------------------------------------------------------- -->

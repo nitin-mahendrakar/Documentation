@@ -1,0 +1,273 @@
+Chapter_1.
+
+	* Why We Learn Gits.
+	-- What Happens When We Git Commit.
+   	-- What Is Stored At Each Commit.
+	-- What Does Git Init Actully Do.
+	
+	* Why Do We Care.	
+	-- We Are Pros.
+	-- It`s Useful.
+	-- It`s Cool.
+						HOW WILL THIS WORK
+						------------------
+	* Objects - Blobs,Trees,Commits.
+	* Branches.
+	* Working Directory,Staging Area,Repository.
+	* Creating A New Repository.
+		-- Without Using (git init),(git add),(git commit)
+	* Manipulating Branches.
+		-- Without Using Git Branch Git Checkout.
+
+Chapter_2. [ Git Objects ]
+		
+						GIT INTERNALS OBJECTS.
+						---------------------
+	Read-Section.
+	------------
+	* Any File Content Change Linked ALL ( BLOB And Tree ) Sha-1 Changes.
+
+
+	* BLOB -- Contents Of File.
+	* Tree -- A Directory Listing ( Of Blobs And Trees )
+	* Commit -- Takes Snapshot of Tree.
+
+#----------------------------------------------------------------------------------------------------------------------------------------------
+
+	commiter : guru						[ Tree ]						    	[blob] 555aaa file2.txt
+	author : guru			 ---->			[blob] 555abc file.txt    --->
+	date : 22/55/22	            			[blob] 666abc file1.txt  
+	message: commit-1 
+#-----------------------------------------------------------------------------------------------------------------------------------------------
+
+	If Changes In File ( Creates A New Blob With New Content ) Attach With Tree OR Commit.
+	
+
+
+Chapter_3.	[Branches]
+
+
+		[commit-1] -- [commit-2] -- [commit-3] | -- [commit-7] -- [commit-8] -- [commit-9] ( master ) 			
+											   | 																----> ( commit * ) [ merge ]
+											   | [commit-4] -- [commit-5] -- [commit-6]  ( Another Branch )
+
+
+
+		Branches Helps To Work For Functioning.
+		After The Work YOu Can (merge or rebase perform actions)
+
+Chapter_4.
+
+
+	command-section
+	---------------
+	
+	> Create mkdir .git
+	> Create mkdir .git/HEAD -- reference of master
+	> Create mkdir .git/objects
+	> Create mkdr  .git/refs/heads/master
+	> echo ref:refs/heads/master > .git/HEAD
+	> git status -- now working file.
+
+
+	> echo "hello" | git hash-object --stdin -w
+	   
+		--stdin read form the stdin.
+		-w write in objects directory.
+			
+		
+	    Returns The BLOB -- A3535AGH
+
+	> git update-index --add --cacheinfo (permessions) (BLOB OR TREE) (filename)
+	> git write-tree  --> create a tree and return object-id.
+	> git commit-tree (object-id) -m $(message) -p ( null or object-id)
+	> echo $(commit-id) > .git/refs/master
+	> git log -- working file now 
+	
+
+	
+	CREATING BRANCHES.
+	-----------------
+	> touch .git/refs/heads/master
+	> echo $(parent-commit-id) > .git/refs/heads/master
+	> echo ref:refs/heads/master2 > .git/HEAD
+	
+
+	
+	ARCHITECTURE .git
+	-----------------
+
+		.git 
+			- HEAD -- Reference Of Head
+			- index	-- stages file are here 
+			- objects 
+			  55
+			    -(BLOB)
+			  75
+			    -(Tree)
+			  88
+		   	    -(commit-d)
+			- ref
+			  - heads
+			    - master  -- holds commit-id
+			    - test    -- holds commit-id ( second branch )
+
+	GIT COMMANDS
+      	------------
+		
+		git add $(filename)
+		git commit -m $(message)
+		git remote add origin $(repository-lnk)
+		git push origin master
+
+		git branch master1 -- Creating New Branch ( Present Branch Clone )
+		git checkout master -- Switch Branch.
+
+		git cat-file -p $(object-id) -- reads file content.
+		gt cat-file -t  $(object-id) -- that`s says which type of object.
+
+Chapter_5. [gigaster part 1]
+		
+		git reset --soft $(commit-id)  -- Remove All Files Repo And Add Staging Area
+		git reset --mixed $(commit-id) -- Removed Staging And File Exists In Work-Dir
+		git reset --hard $(commit-id)  -- Removed Work-Dir And Staging Area.
+
+
+		--soft 
+			new file : Your All Staging Files Are Added In Reference Commit Staging Area.
+			modified : Files Are Added in Modified Area.
+
+		--mixed	
+			new file : Your All Staging Files Are Added In Reference Commit Untracked Area.
+			modified : File Exist In REference Commit . They Added In Modified Area. Otherwise They Added In Untracked Area. 
+
+		--hard.
+				move to head reference commit.
+	
+
+	
+Chapter_6 [ gigaster part 2]
+
+		git rev-parse HEAD~1   -- Return The (Commit Id)
+		git cherry-pick $(commit-id)
+
+			- Genrate A Different Comment-id With Modified Files and New Files In This Commit.
+
+		git revert (commit-id)	
+
+			- Modifies Files As The Same Of Commit-id-parent.
+			- Create New Commit With Reference Commit-Message.
+
+		git reflog  -- Updates The Hisotory What You Do.
+			
+			-- Monitering Referencing Heads. 
+	 
+Chapter_7 [ git diff ]
+
+
+	git diff $(commit-id) or git diff --no-index $(file1) $(file2)
+
+	git diff   ( compareing staged files )
+	git diff -- new_file.txt  ( specific file difference 
+	git diff --cached  ( working area and reop diff )	
+	git diff --no-index  file1 file2 
+
+
+	git apply -C1 $(patch-file) if lines are not match so search oneline top and one line down.
+
+
+
+
+Chapter_8. [Merge Theroy HOw Works]
+
+	HOW MERGe WORKS
+	----------------
+
+		SAME ANSCITOR IN TWO BRANCHES.
+		GENRATE PATCHES BOTH BRANCH  DIFFS WITH ANSICTOR
+		APPLY PATCHES TOGETHTEr
+
+	
+	git merge-base head $(another-branch) that show use  both have same commit id to merge together 
+	git apply $(merge-base) $(patch)  --index
+	
+
+	git apply --index $(patchfile)
+        write-tree 
+
+	
+
+
+	git commit-tree $(write-tree) -m $(message)  -p $(mergebase) -p  €(commit-1) - p €(commit-2)
+
+
+Chapter_9. [ merge -conficts ]
+
+
+	git diff -s --abbrev  -- showing version files.
+	git diff --ours       -- compares merge-base
+	git diff -- thereis   -- compares merge-base.
+
+
+
+Chapter_10. [rebase]
+
+				( before )
+		[commit-1] -- [commit-2] -- [commit-3] -- [commit-4]
+					  |
+		        	  [commit-5] -- [commit-6] -- [commit-7] (feature)
+
+
+				( after )
+		> git checkout feature.
+		> git rebase master feature.
+
+		[commit-1] -- [commit-2] -- [commit-3] -- [commit-4] -- [commit-5&6&7]
+
+
+	
+	git rebase --onto [commit-2] [ commit-4] .
+
+				(before)
+		[commit-1] -- commit-2  -- commit-3 -- commit-4
+					   |
+					commit-5 -- commit-6
+				
+				(after)
+		commit-1 -- commit-2 -- commit-5 -- commit-6
+
+
+	
+	git rebase --onto $<newbranch> <upstream> <branch>
+	
+
+	(conditions are apply this command)
+	git checkout <branch>
+	git reset --hard <newbranch>
+	git diff <upstream>...<branch>
+	git cherry-pick all differences. upstream-chil
+
+	
+
+
+
+														
+chapeter_10. [ stash ]
+	
+	git stash list 
+	git stash save -m "message"
+	git stash apply
+	git stash drop 
+	git stash clear 
+
+
+
+chapter_11 [ git tag ]
+
+	git tag -a <tagname> <commit-hash> -m ""
+	git push origin --tags 
+	git push origin <tagname>
+	git tag -d <tagname>
+
+
+					----------Thanx For Learning-------------		

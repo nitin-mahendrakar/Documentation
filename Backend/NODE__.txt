@@ -1,0 +1,87 @@
+[ NodeJS Global Variables ]
+    __dirname __filename 
+    exports : {}
+    require(path)  // its function call 
+    this : {}
+    module : {id , path}
+
+    (function(__dirname, __filename, require, exports, this, module){
+        {your_code}
+    })
+
+
+[ Module Exports ]
+    module.exports = {} // default export 
+    exports = module.exports // its referenced with module.exports 
+
+[ Caching ] 
+    require("hello")
+    require("hello") // not called because this module was cached.
+
+    [ how to see ]
+    require(dropdown) > cached (dropdown) // and see cached files
+
+
+
+[ Built In Modules ]
+
+
+    [ Path ] = users/hello/index.js
+
+        [ Properties ]
+        - path.sep = (windows : \\) (linux : /)
+        - path.delimeter[env seprator] = (windows : ;) (Linux : :)
+
+        process.cwd() : cd users && node ./hello/index.js 
+        [output] = /users because node you runned in /users file
+
+        basename() : shows __filename
+        dirname() : shows folder (default . returns)
+        extname() : __file extension. ( . another after filename they returns)
+        join(one,two,three,../,./) : [ windows ] one\two\three
+                 [  linux  ] one/two/three
+                 You can use also this inside [ ../, ./]
+
+        resolve(one,two,three) : (creates absoloute path) 
+        [ warning ] : don`t use absoloute path in resolve 
+        [ output ]  : process.cwd() + one/two/three 
+        
+
+        path.normalize() : parsing the path && extra / or \\ removes
+        [ warning ]
+        ../../secret.txt
+        [ output ] : ../../secret.txt
+
+        hello/../../secret.txt
+       [output] : ../secret.txt
+
+        path.parse() : parse the string 
+        [ output ] : { root , dir , base , ext, name}
+
+        path.format(path.parse()) : returns path format 
+        [ output ] : dir + base + name + ext 
+
+        path.relative() : 
+        
+        path.isAbsolute() : 
+        path.toNamespacedPath() : 
+
+        
+FileSystem 
+    - Hamesha fs/promises use karo project ke liye easy hai 
+
+    createReadStream();
+        - write() --> write function call karta hai 
+        
+        stream.on("data",(chunk)=>{
+            console.log(chunk)
+        });
+
+        stream.on("end")  : data write hogaya 
+        stream.on("close") : fd close hogayi hai 
+    
+    createWriteStream()
+        - stream.write()
+        - stream.on("finish") : saare data succusfully write hogaya 
+        - stream.on("close") : fd close hogayi hai 
+

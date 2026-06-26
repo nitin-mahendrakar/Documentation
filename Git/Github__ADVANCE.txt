@@ -1,0 +1,36 @@
+
+Chapter_1. (Search & Filter)
+
+
+	git log --before=<date> 
+	git log --after=<date>
+
+	git log --oneline grep=<string>
+	git log --oneline -author=<authorname>
+	git log -- readme   				--- returns which commits changed the readme.me file.
+
+	git log  aaa...bbb     				--- it`s Return Differences Between 2 Commits.
+
+
+Chapter_2.
+
+	git submodule add $(origin) $(path)
+	
+	(Cloneing Repo)
+
+	git clone $(url)
+	git submodule init  	--- ( .gitmodules objects writing in .git/config file )
+	git submodule update    --  ( fetch the data from --remote )
+	
+
+	git submodule update --remote --merge/rebase
+
+	git submodule foreach "git diff"
+
+	git checkout --recurse-submodules 
+
+		READ
+		----
+
+		you created submodules in created in feature branch 
+		remove all submodule files with checkout 

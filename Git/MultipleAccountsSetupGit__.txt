@@ -1,0 +1,17 @@
+# Personal GitHub account
+Host github-personal
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_personal
+
+# Work GitHub account
+Host github-work
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_work
+
+# Personal account
+git clone git@github-personal:personalusername/myrepo.git
+
+# Work account
+git clone git@github-work:workusername/workrepo.git
