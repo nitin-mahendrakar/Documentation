@@ -84,4 +84,6 @@ FileSystem
         - stream.write()
         - stream.on("finish") : saare data succusfully write hogaya 
         - stream.on("close") : fd close hogayi hai 
+        - stream.on("drain",()=>{
+               "buffer empty" })
 
