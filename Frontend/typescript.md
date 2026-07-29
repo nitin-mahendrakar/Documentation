@@ -1,3 +1,19 @@
+[Key Of ]
+type User = {
+  name: string;
+  age: number;
+  isAdmin: boolean;
+};
+
+type UserKeys = keyof User;
+type UserKeys = "name" | "age" | "isAdmin";
+
+
+[ Extends ]
+
+interface extends interface {}
+
+type IsString<T> = T extends string ? "Yes" : "No";
 
 [ Datatypes ]
     number 
