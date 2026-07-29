@@ -1,0 +1,14 @@
+* * * What is Linux 
+--> Linux is the kernel of a family of a family of open-source unix-like operating system 
+
+* * * What is OS
+--> A System software that manages computer hardware and provides various services for computer programs 
+
+* * * UNIX 
+--> A Powerful, multitasking,multi-user os that serves as the basis for many for many modern OS 
+
+* ** Kernel 
+--> It is responsible for managing the hardware,including CPU,Memory, and other devices
+
+* * * GNU 
+--> GNU Is Unix Like Operating System
