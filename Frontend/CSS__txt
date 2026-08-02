@@ -94,8 +94,8 @@
       :optional — optional inputs
       :valid — input passes validation
       :invalid — input fails validation
-      :focus-visible=input/select
-      :focus-within = label ko target karta jab input ko focus karte hai
+      :focus-visible= tabindex=0;  tab tap karke yaha pe aayega to apply hoga
+      :focus-within = div ke andar koi bhi focus element pe click huva to apply hoga jaise select/input/textarea/
       :user-valid
       :user-invalid
 
